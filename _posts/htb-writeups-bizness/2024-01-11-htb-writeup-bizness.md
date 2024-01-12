@@ -1,7 +1,7 @@
 ---
 title: HTB Writeup - Bizness
 date: 2024-01-11 14:28:47 +07:00
-modified: 2024-01-11 14:28:47 +07:00
+modified: 2024-01-12 09:45:00 +07:00
 tags: [hackthebox, linux, boot2root, rce]
 description: All the services are free, a source code this site placed on github repository and intergration with netlify service, another service that you can use is github page for hosting your own static site.
 ---
@@ -64,8 +64,8 @@ OS and Service detection performed. Please report any incorrect results at https
 # Nmap done at Tue Jan  9 14:23:48 2024 -- 1 IP address (1 host up) scanned in 78.61 seconds
 ```
 
-# Directory Enumaration
-After looking at the ports, there's only one thing that we can check which is the web application. When I visit bizness.htb, it automatically direct to `https://bizness.htb/`. Without further do, I just do the fuzzing to see if there is a juicy information that we can use.
+# Directory Enumeration
+After looking at the ports, there's only one thing that we can check which is the web application. When I visit bizness.htb, it automatically direct to  `https://bizness.htb/` on port 443. Without further do, I just do the fuzzing to see if there is a juicy information that we can use.
 
 ```bash
 dirsearch -u https://bizness.htb/

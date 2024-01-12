@@ -213,7 +213,27 @@
     opacity: 0.9;
     line-height: 1.688;
     text-align: justify;
-    margin-bottom: -100px;
+  }
+
+  .readmore {
+    text-align: justify;
+  }
+}
+
+.readmore p {
+  display: inline-block;
+  color: #c7bebe; /* Set text color to contrast with background */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  .readmore a {
+    display: block;
+    margin-bottom: 20px; /* Adjust the margin for smaller screens */
   }
 }
 
