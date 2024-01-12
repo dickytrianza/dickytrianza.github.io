@@ -10,12 +10,11 @@ comments: false
 
 
 
-Dicky, mahasiswa Computer Science di Sampoerna University, sepenuh hati menjalani perjalanan akademisnya. Meskipun sibuk dengan kuliah, ia tidak hanya fokus pada aspek formal ilmu komputer, tetapi juga mengembangkan minat pribadinya di bidang Keamanan Siber. Menyadari bahwa materi kuliahnya belum mencakup secara mendalam Keamanan Siber, Dicky dengan semangat dan dedikasi memilih untuk mendalami pengetahuannya.
+Dicky, mahasiswa Computer Science di Sampoerna University, sepenuh hati menjalani perjalanan akademisnya. Meskipun sibuk dengan kuliah, ia tidak hanya fokus pada aspek formal ilmu komputer, tetapi juga mengembangkan minat pribadinya di bidang Keamanan Siber. Menyadari bahwa materi kuliahnya belum mencakup secara mendalam Keamanan Siber, Dicky dengan semangat memilih untuk mendalami pengetahuannya.
 
-Aktivitasnya tidak hanya terbatas pada kelas dan buku teks, Dicky mengeksplorasi dunia Keamanan Siber melalui berbagai platform offensive labs seperti Hackthebox, Tryhackme, Hacktrace-Ranges, dan sebagainya. Bagi Dicky, Keamanan Siber bukan hanya kewajiban belajar, melainkan juga sebuah kegemaran yang memberikan warna dan keunikan pada perjalanan pendidikannya.
+Selain dari kelas dan buku teks, Dicky menjelajahi dunia Keamanan Siber melalui berbagai platform offensive labs seperti Hackthebox, Tryhackme, Hacktrace-Ranges, dan lainnya. Bagi Dicky, Keamanan Siber bukan hanya suatu kewajiban belajar, melainkan juga sebuah kegemaran yang memberikan warna dan keunikan pada perjalanan pendidikannya.
 
-Sebagai mahasiswa berdedikasi, Dicky menggabungkan keterlibatannya dalam dunia akademis dengan eksplorasi pribadinya, menciptakan keseimbangan harmonis antara pembelajaran formal dan pengembangan minat pribadi di bidang yang dinamis dan penting seperti Keamanan Siber.
-
+Sebagai seorang mahasiswa yang berdedikasi, Dicky berhasil menyatukan keterlibatannya dalam dunia akademis dengan eksplorasi pribadinya, menciptakan keseimbangan harmonis antara pembelajaran formal dan pengembangan minat pribadi di bidang yang dinamis dan penting seperti Keamanan Siber.
 
 Mungkin dibutuhkan:
 
