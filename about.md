@@ -14,9 +14,7 @@ Dicky, mahasiswa Computer Science di Sampoerna University, sepenuh hati menjalan
 
 Selain dari kelas dan buku teks, Dicky menjelajahi dunia Keamanan Siber melalui berbagai platform offensive labs seperti Hackthebox, Tryhackme, Hacktrace-Ranges, dan lainnya. Bagi Dicky, Keamanan Siber bukan hanya suatu kewajiban belajar, melainkan juga sebuah kegemaran yang memberikan warna dan keunikan pada perjalanan pendidikannya.
 
-Sebagai seorang mahasiswa yang berdedikasi, Dicky berhasil menyatukan keterlibatannya dalam dunia akademis dengan eksplorasi pribadinya, menciptakan keseimbangan harmonis antara pembelajaran formal dan pengembangan minat pribadi di bidang yang dinamis dan penting seperti Keamanan Siber.
-
-Mungkin dibutuhkan:
+Sessuatu yang mungkin yang anda cari ✨:
 
 <script src="https://tryhackme.com/badge/1574885"></script>
 
