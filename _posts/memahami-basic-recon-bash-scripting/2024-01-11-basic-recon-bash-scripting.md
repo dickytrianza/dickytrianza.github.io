@@ -101,7 +101,7 @@ else
 fi
 ```
 
-di modifikasi code ini, saya menambahkan argumen perintah baru yang bernama tool, yang mana mengizinkan kita untuk menjalankan spesifik program yang ingin dijalankan. Opsi yang tersedia:
+pada modifikasi code ini, saya menambahkan argumen perintah baru yang bernama tool, yang mana mengizinkan kita untuk menjalankan spesifik program yang ingin dijalankan. Opsi yang tersedia:
 - `nmap-only` untuk menjalankan Nmap saja
 - `dirsearch-only` untuk menjalankan Dirsearch saja
 
