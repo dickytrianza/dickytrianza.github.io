@@ -109,6 +109,6 @@ pada modifikasi code ini, saya menambahkan argumen perintah baru yang bernama to
 
 Pentingnya bash scripting terletak pada kemampuannya untuk menyerdehanakan tindakan-tindakan kompleks menjadi file script yang dapat dieksekusi dengan mudah. Dalam contoh recon script yang telah dibuat, kita dapat dengan cepat melakukan scanning terhadap target tertentu. Melalui pembahasan ini, saya harap tulisan ini dapat memberi manfaat dalam efisiensi dan flesibilitas dalam otomatisasi.
 
-# Referensi
+## Referensi
 
 Li, V. (2021). Bug Bounty Bootcamp: The Guide to Finding and Reporting Web Vulnerabilities. United Kingdom: No Starch Press.
