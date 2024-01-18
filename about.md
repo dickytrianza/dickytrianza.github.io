@@ -6,15 +6,11 @@ excerpt: Hello World
 comments: false
 ---
 
+Dicky adalah mahasiswa Ilmu Komputer di Sampoerna University, sepenuh hati menjalani perjalanan akademisnya. Meskipun sibuk dengan perkuliahanya, ia tidak hanya fokus pada aspek formal ilmu komputer, tetapi juga mengembangkan minat pribadinya di bidang Keamanan Siber. Menyadari bahwa materi kuliahnya belum mencakup secara mendalam Keamanan Siber, Dicky dengan memilih untuk mendalami pengetahuannya sendiri.
 
+Sebagai seorang pemula yang menekuni bidang siber, Dicky menekuni bidang ini melalui berbagai platform offensive labs seperti Hackthebox, Tryhackme, Hacktrace-Ranges, dan lainnya. Bagi Dicky, Keamanan Siber bukan hanya suatu kewajiban belajar, melainkan juga sebuah kegemaran yang memberikan warna dan keunikan pada perjalanan pendidikannya.
 
-
-
-Dicky, mahasiswa Computer Science di Sampoerna University, sepenuh hati menjalani perjalanan akademisnya. Meskipun sibuk dengan kuliah, ia tidak hanya fokus pada aspek formal ilmu komputer, tetapi juga mengembangkan minat pribadinya di bidang Keamanan Siber. Menyadari bahwa materi kuliahnya belum mencakup secara mendalam Keamanan Siber, Dicky dengan semangat memilih untuk mendalami pengetahuannya.
-
-Selain dari kelas dan buku teks, Dicky menjelajahi dunia Keamanan Siber melalui berbagai platform offensive labs seperti Hackthebox, Tryhackme, Hacktrace-Ranges, dan lainnya. Bagi Dicky, Keamanan Siber bukan hanya suatu kewajiban belajar, melainkan juga sebuah kegemaran yang memberikan warna dan keunikan pada perjalanan pendidikannya.
-
-Sessuatu yang mungkin yang anda cari ✨:
+May u needs ✨:
 
 <script src="https://tryhackme.com/badge/1574885"></script>
 
@@ -23,7 +19,3 @@ Sessuatu yang mungkin yang anda cari ✨:
 <a href="https://www.hacktrace-ranges.id/users_profile/view/6273a9de5498a">Hacktrace Ranges</a>
 
 -{{ site.author.email }}
-
--linktr.ee/dtrianza
-
-
