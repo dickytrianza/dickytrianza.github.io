@@ -1,7 +1,7 @@
 ---
 title: Basic Recon Bash Scripting
 date: 2024-01-18 21:53:00 +07:00
-modified: 2024-01-18 21:53:00 +07:00
+modified: 2024-01-18 21:57:00 +07:00
 tags: [bash, programming, linux]
 description: All the services are free, a source code this site placed on github repository and intergration with netlify service, another service that you can use is github page for hosting your own static site.
 ---
@@ -15,7 +15,7 @@ Di postingan kali ini saya akan membahas tentang cara recon dengan bash scriptin
 Disini saya akan memberikan contoh cara membuat recon script. Kita mulai dengan membuka text editor apa saja yang menurut kalian nyaman. Pertama kita mulai dengan menuliskan dengan tanda pagar atau hash mark '#' dan juga tanda seru atau exclamation mark '!'. Tujuan dari kedua simbol tersebut itu untuk mengizinkan *plaintext*
 dan juga memberi tahu ke komputer bahwa kita menggunakan bash.
 
-Saya akan mencoba ketika kita ingin mengeksekusi dua command sekaligus. Sebagai contoh, saya akan menggunakan mesin hackthebox yang sudah saya bahas sebelumnya, jika ingin membaca atau melihatnya terlebih dahulu bisa klik link disini [bizness](/dickytrianza.github.io/_posts/htb-writeups-bizness/2024-01-11-htb-writeup-bizness.md). Langkah selanjutnya, buat file dengan nama apa saja , disini saya menggunakan nama ``recon.sh`` dengan file yg berisikan seperti ini:
+Saya akan mencoba ketika kita ingin mengeksekusi dua command sekaligus. Sebagai contoh, saya akan menggunakan mesin hackthebox yang sudah saya bahas sebelumnya, jika ingin membaca atau melihatnya terlebih dahulu bisa klik link disini [bizness](/htb-writeup-bizness/). Langkah selanjutnya, buat file dengan nama apa saja , disini saya menggunakan nama ``recon.sh`` dengan file yg berisikan seperti ini:
 
 ```bash
 #!/bin/bash
