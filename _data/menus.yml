@@ -1,14 +1,18 @@
-- title: home
+- title: Home
   url: /
   external: false
 
-- title: archive
+- title: Archive
   url: /archive/
   external: false
 
-- title: about
+- title: About
   url: /about/
   external: false # set true if you using external link, see below
+
+- title: CV
+  url: https://docs.google.com/document/d/1wtwcEKNyPJfs_C1ioU2Gf6s6fcwzjwk-9g-79LgiajE/edit?usp=sharing
+  external: false
 
 # Example:
 # - title: github
