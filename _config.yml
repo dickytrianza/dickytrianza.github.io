@@ -13,12 +13,12 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Dicky Aditrianza # author name
   bio: >- # tell to the world 
-    Hanya manusia biasa yang kebetulan menyukai dunia Cybersecurity.<br>
+        Hanya manusia biasa yang kebetulan menyukai dunia Cybersecurity.<br>
     ENG/ID Blog.
     
   username: corvuz # general username
   github: dickytrianza # github username
-  email: daditrianza@gmail.com # email adress
+  email: daditrianza@email.com # email adress
   avatar: /assets/img/profile.jpeg # change with your own avatar
 
 # URL settings
