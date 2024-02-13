@@ -2,7 +2,6 @@
 title: About me
 permalink: /about/
 layout: page
-excerpt: Hello World
 comments: false
 ---
 
@@ -14,7 +13,7 @@ May u needs ✨:
 
 <script src="https://tryhackme.com/badge/1574885"></script>
 
-<a href="https://app.hackthebox.com/profile/1292342"><img src="http://www.hackthebox.eu/badge/image/1292342" style="padding-top: 20px" alt="Hack The Box"><a>
+<a href="https://app.hackthebox.com/profile/1292342"><img src="http://www.hackthebox.eu/badge/image/1292342" style="padding-top: 20px" alt="Hack The Box"></a>
 
 <a href="https://www.hacktrace-ranges.id/users_profile/view/6273a9de5498a">Hacktrace Ranges</a>
 
