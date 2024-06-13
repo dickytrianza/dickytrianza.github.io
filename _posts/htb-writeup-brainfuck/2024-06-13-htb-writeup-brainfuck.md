@@ -1,13 +1,14 @@
 ---
-title: HTB Writeup - Bizness
+title: HTB Writeup - Brainfuck
 date: 2024-06-13 14:28:47 +07:00
 modified: 2024-06-13 09:45:00 +07:00
 tags: [hackthebox, linux, boot2root, cryptography]
 description: All the services are free, a source code this site placed on github repository and intergration with netlify service, another service that you can use is github page for hosting your own static site.
 ---
 
+<img src="/assets/blog-images/htb-brainfuck/logo-brainfuck.png" alt="htb-brainfuck">
 
-## Information Gathering
+# Information Gathering
 
 ```bash
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-06 22:39 WIB
@@ -66,7 +67,7 @@ Nmap done: 1 IP address (1 host up) scanned in 120.39 seconds
 
 <img src="/assets/blog-images/htb-brainfuck/image1.png" alt="forum">
 
-## Directory Enumeration
+# Directory Enumeration
 
 ```bash
 [22:47:44] 200 -   19KB - /license.txt                                      
@@ -93,7 +94,7 @@ Nmap done: 1 IP address (1 host up) scanned in 120.39 seconds
 [22:48:53] 200 -    1B  - /wp-admin/admin-ajax.php 
 ```
 
-## Vulnerability Analysis
+# Vulnerability Analysis
 
 WPScan finds wordpress version out of date.
 
@@ -107,9 +108,9 @@ Check from [Exploit-db](https://www.exploit-db.com/exploits/41006) , the poc sai
 
 <img src="/assets/blog-images/htb-brainfuck/image4.png" alt="exploit-db">
 
-## Exploitation
+# Exploitation
 
-### Wodpress
+## Wodpress
 
 Now we modify the html, change the parameter action to the url `https://brainfuck.htb/wp-admin/admin-ajax.php`, and change the parameter value to admin.
 
@@ -133,7 +134,7 @@ Check the password using inpect element or view source code.
 
 <img src="/assets/blog-images/htb-brainfuck/image10.png" alt="password-leak">
 
-### Telnet
+## Telnet
 
 Using the credentials obtained from wordpress, login into telnet using command below:
 
@@ -226,7 +227,7 @@ Sets the `id_rsa` file permission to read and write for the owner of the file by
 
 <img src="/assets/blog-images/htb-brainfuck/image21.png" alt="ssh">
 
-## Privilege Escalation
+# Privilege Escalation
 
 In `orestis` directory there are several interesting files. First is encrypt.sage, where the purpose of this code is to encrypt a password using RSA encryption and save the encrypted password.
 
@@ -286,4 +287,4 @@ Next, convert the plaintext result from decimal to ASCII, using the following co
 
 And that's it, the output from that command is actually the root flag.
 
-#### Credit to ippsec for the valuable lesson from his [video]()
+### Credit to ippsec for the valuable lesson from his [video](https://www.youtube.com/watch?v=o5x1yg3JnYI&t=1471s)
