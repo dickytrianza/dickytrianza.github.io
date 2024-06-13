@@ -5,8 +5,7 @@ layout: page
 comments: false
 ---
 
-## Education
-
+## - Education
 ### University of Arizona
 **Bachelor of Applied Science - BASc, Electrical and Computer Engineering**  
 _Aug 2023 - May 2025_
@@ -15,8 +14,7 @@ _Aug 2023 - May 2025_
 **Bachelor's degree, Computer Science**  
 _2021 - 2025_
 
-## Experience
-
+## - Experience
 ### PT ITSEC Asia Tbk
 **Penetration Tester Intern**  
 _PT ITSEC Asia Tbk · Internship_  
