@@ -6,13 +6,13 @@ comments: false
 ---
 
 ## - Education
-### University of Arizona
-**Bachelor of Applied Science - BASc, Electrical and Computer Engineering**  
-_Aug 2023 - May 2025_
-
 ### Sampoerna University
 **Bachelor's degree, Computer Science**  
 _2021 - 2025_
+
+### University of Arizona
+**Bachelor of Applied Science - BASc, Electrical and Computer Engineering**  
+_Aug 2023 - May 2025_
 
 ## - Experience
 ### PT ITSEC Asia Tbk
