@@ -100,7 +100,7 @@ WPScan finds wordpress version out of date.
 
 <img src="/assets/blog-images/htb-brainfuck/image3.png" alt="wpscan">
 
-Google the version current version, found many resources that the Wordpress version 7.1.3 vulnerable to privilege escalation and SQL Injection.
+Google the current version, found many resources that the Wordpress version 7.1.3 vulnerable to privilege escalation and SQL Injection.
 
 <img src="/assets/blog-images/htb-brainfuck/image2.png" alt="vulnerability">
 
