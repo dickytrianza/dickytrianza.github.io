@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-gem "github-pages", "~> 227"  # Adjust the version based on compatibility
-gem "jekyll", "~> 3.9.2"
+gem "github-pages", "~> 232"  # Adjust the version based on compatibility
+gem "jekyll", "~> 3.10.0"
 
 group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.13'
