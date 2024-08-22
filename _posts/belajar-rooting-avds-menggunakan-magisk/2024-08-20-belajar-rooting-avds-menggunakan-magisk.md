@@ -18,29 +18,29 @@ Selain itu, Magisk memiliki fitur "MagiskHide", yang memungkinkan pengguna menye
 
 # Persiapan Sebelum Rooting
 
-### 1. Buka Android Studio, pada bagian tools lalu ke Device Manager.
+#### 1. Buka Android Studio, pada bagian tools lalu ke Device Manager.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img1.png" alt="device manager">
 
-### 2. Pada menu Device Manager, klik "create new device" dan pilih device yang kamu inginkan.
+#### 2. Pada menu Device Manager, klik "create new device" dan pilih device yang kamu inginkan.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img2.png" alt="device manager">
 
-### 3. Selanjutnya pada menu System Image, pilih sesuai dengan selera mu, dan pastikan jangan memilih API Level 28 (Pie) karena versi ini sudah tidak kompatibel dengan tools **rootAVD** yang akan kita gunakan nantinya.
+#### 3. Selanjutnya pada menu System Image, pilih sesuai dengan selera mu, dan pastikan jangan memilih API Level 28 (Pie) karena versi ini sudah tidak kompatibel dengan tools **rootAVD** yang akan kita gunakan nantinya.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img3.png" alt="system image">
 
-### 4. Setelah instalasi system image, jalankan device android.
+#### 4. Setelah instalasi system image, jalankan device android.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img4.png" alt="device manager">
 
-### Langkah-langkah Instalasi Magisk
+# Langkah-langkah Instalasi Magisk
 
-### 1. Disini seperti yang saya bilang sebelumnya kita akan menggunakan tool [rootAVD](https://gitlab.com/newbit/rootAVD), yang merupakan script untuk menjalakan root pada AVDs dengan emulator dari Android Studio.
+#### 1. Disini seperti yang saya bilang sebelumnya kita akan menggunakan tool [rootAVD](https://gitlab.com/newbit/rootAVD), yang merupakan script untuk menjalakan root pada AVDs dengan emulator dari Android Studio.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img5.png" alt="gitlab rootavd">
 
-### 2. Clone repository rootAVD dengan command seperti berikut:
+#### 2. Clone repository rootAVD dengan command seperti berikut:
 
 ```
 git clone https://gitlab.com/newbit/rootAVD.git
@@ -62,7 +62,7 @@ drwxr-xr-x 1 dadit 197609        0 Aug 19 10:59 Apps/
 -rwxr-xr-x 1 dadit 197609    82859 Aug 19 10:34 rootAVD.sh*
 ```
 
-### 3. Jalankan perintah berikut jika menggunakan Linux/MacOS.
+#### 3. Jalankan perintah berikut jika menggunakan Linux/MacOS.
 
 ```bash
 Command Examples:
@@ -79,7 +79,7 @@ Command Examples:
 ./rootAVD.sh system-images/android-33/google_apis_playstore/x86_64/ramdisk.img AddRCscripts
 ```
 
-### 4. Jalankan perintah berikut jika menggunakan Windows.
+#### 4. Jalankan perintah berikut jika menggunakan Windows.
 
 ```bash
 Command Examples:
@@ -95,7 +95,7 @@ rootAVD.bat system-images\android-33\google_apis_playstore\x86_64\ramdisk.img In
 rootAVD.bat system-images\android-33\google_apis_playstore\x86_64\ramdisk.img InstallPrebuiltKernelModules GetUSBHPmodZ PATCHFSTAB DEBUG
 ```
 
-### 5. Karena disini saya menggunakan Windows maka perintah yang akan saya gunakan adalah: 
+#### 5. Karena disini saya menggunakan Windows maka perintah yang akan saya gunakan adalah: 
 
 ```
 rootAVD.bat system-images\android-34\google_apis\x86_64\ramdisk.img
@@ -103,17 +103,17 @@ rootAVD.bat system-images\android-34\google_apis\x86_64\ramdisk.img
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img6.png" alt="gitlab rootavd">
 
-### 6. Setelah itu, AVDs akan otomatis tertutup , dan saat menjalankannya kembali, Magisk sudah terinstall pada perangkat android.
+#### 6. Setelah itu, AVDs akan otomatis tertutup , dan saat menjalankannya kembali, Magisk sudah terinstall pada perangkat android.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img7.png" alt="android emulator">
 
 # Cara Memeriksa Status Root 
 
-### 1. Menggunakan aplikasi RootChecker.
+#### 1. Menggunakan aplikasi RootChecker.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img8.png" alt="root checker">
 
-### 2. Menggunakan adb shell.
+#### 2. Menggunakan adb shell.
 
 <img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img9.png" alt="root checker">
 
