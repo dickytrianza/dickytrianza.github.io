@@ -1,7 +1,7 @@
 ---
-title: Belajar Rooting AVD Devices Menggunakan Magisk
+title: Rooting AVD Devices Menggunakan Magisk
 date: 2024-08-19 15:00:00 +07:00
-modified: 2024-08-19 15:00:00 +07:00
+modified: 2024-08-22 15:00:00 +07:00
 tags: [rooting, mobile, magisk, pentest]
 description: All the services are free, a source code this site placed on github repository and intergration with netlify service, another service that you can use is github page for hosting your own static site.
 ---
@@ -20,25 +20,25 @@ Selain itu, Magisk memiliki fitur "MagiskHide", yang memungkinkan pengguna menye
 
 #### 1. Buka Android Studio, pada bagian tools lalu ke Device Manager.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img1.png" alt="device manager">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img1.png" alt="device manager">
 
 #### 2. Pada menu Device Manager, klik "create new device" dan pilih device yang kamu inginkan.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img2.png" alt="device manager">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img2.png" alt="device manager">
 
 #### 3. Selanjutnya pada menu System Image, pilih sesuai dengan selera mu, dan pastikan jangan memilih API Level 28 (Pie) karena versi ini sudah tidak kompatibel dengan tools **rootAVD** yang akan kita gunakan nantinya.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img3.png" alt="system image">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img3.png" alt="system image">
 
 #### 4. Setelah instalasi system image, jalankan device android.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img4.png" alt="device manager">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img4.png" alt="device manager">
 
 # Langkah-langkah Instalasi Magisk
 
 #### 1. Disini seperti yang saya bilang sebelumnya kita akan menggunakan tool [rootAVD](https://gitlab.com/newbit/rootAVD), yang merupakan script untuk menjalakan root pada AVDs dengan emulator dari Android Studio.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img5.png" alt="gitlab rootavd">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img5.png" alt="gitlab rootavd">
 
 #### 2. Clone repository rootAVD dengan command seperti berikut:
 
@@ -101,21 +101,21 @@ rootAVD.bat system-images\android-33\google_apis_playstore\x86_64\ramdisk.img In
 rootAVD.bat system-images\android-34\google_apis\x86_64\ramdisk.img
 ```
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img6.png" alt="gitlab rootavd">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img6.png" alt="gitlab rootavd">
 
 #### 6. Setelah itu, AVDs akan otomatis tertutup , dan saat menjalankannya kembali, Magisk sudah terinstall pada perangkat android.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img7.png" alt="android emulator">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img7.png" alt="android emulator">
 
 # Cara Memeriksa Status Root 
 
 #### 1. Menggunakan aplikasi RootChecker.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img8.png" alt="root checker">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img8.png" alt="root checker">
 
 #### 2. Menggunakan adb shell.
 
-<img src="/assets/blog-images/belajar-rooting-avds-menggunakan-magisk/img9.png" alt="root checker">
+<img src="/assets/blog-images/rooting-avds-menggunakan-magisk/img9.png" alt="root checker">
 
 # Kesimpulan
 
