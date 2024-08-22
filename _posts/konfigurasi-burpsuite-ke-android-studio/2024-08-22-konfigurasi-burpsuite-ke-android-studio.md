@@ -86,7 +86,7 @@ Setelah Android 9 (API Level 28), Google membuat perubahan keamanan menjadi lebi
 - Jika memungkinkan, gunakan emulator atau perangkat dengan API level di bawah 28 untuk menghindari pembatasan baru yang diperkenalkan pada versi Android yang lebih baru.
 - Downgrade versi emulator.
 
-# Mengapa harus Downgrade Emulator?
+# Mengapa harus Downgrade versi Emulator dan API level?
 Menggunakan emulator dengan versi yang lebih lama, terutama dengan API level di bawah 28, dapat membantu mengatasi berbagai masalah yang muncul karena pembaruan keamanan di versi Android yang lebih baru.
 
 **Alasan Downgrade:**
@@ -96,7 +96,7 @@ Menggunakan emulator dengan versi yang lebih lama, terutama dengan API level di 
 **Cara Downgrade Emulator**
 - Buka Android Studio dan gunakan AVD Manager untuk membuat emulator baru dengan API level yang lebih rendah (misalnya, API 27 atau lebih rendah).
 - Jika sudah memiliki emulator yang berjalan di API level tinggi, buat instalan emulator baru dengan versi yang lebih rendah, download [disini](https://developer.android.com/studio/emulator_archive), atau gunakan image yang sudah tersedia di AVD Manager. 
-- Setelah download, extract files ke Android SDK directory di `~/Android/Sq/` jika menggunakan (Linux/MacOS) atau `C:\Users\namalu\AppData\Local\Android\Sdk` jika menggunakan (Windows).
+- Setelah download, extract files ke Android SDK directory di `~/Android/Sdk/` jika menggunakan (Linux/MacOS) atau `C:\Users\namalu\AppData\Local\Android\Sdk` jika menggunakan (Windows).
 
 # Kesimpulan
 
