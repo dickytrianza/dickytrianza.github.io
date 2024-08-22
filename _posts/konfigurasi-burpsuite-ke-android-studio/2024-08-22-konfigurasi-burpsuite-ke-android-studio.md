@@ -102,7 +102,7 @@ Menggunakan emulator dengan versi yang lebih lama, terutama dengan API level di 
 
 Konfigurasi Burp Suite dengan Android Studio adalah langkah penting dalam pengujian kemanan aplikasi Android. Hal ini berguna untuk pentester menganalisis network traffic yang dihasilkan oleh aplikasi client. Namun, proses ini tidak selalu sederhana, terutama ketika menggunakan emulator atau perangkat Android modern.
 
-Supaya lebih efektif, kita harus memahami dan mengatasi berbagai macam masalah seperti konfigurasi proxy yang belum benar, dan penanganan pembatasan-pembatasan security pada Android versi terbaru. Karena kehidupan ini tidak ada jalan yang selalu mulus semua butuh proses, dibalik proses itu ada yang namannya usaha, seperti halnya kita melakukan troubleshooting pada instalasi kali ini karena di balik setiap kesulitan, pasti ada kemudahan yang menunggu dengan senyum manis. 
+Supaya lebih efektif, kita harus memahami dan mengatasi berbagai macam masalah seperti konfigurasi proxy yang belum benar, dan penanganan pembatasan-pembatasan security pada Android versi terbaru. Mirip seperti kehidupan ini, tidak ada jalan yang selalu mulus semua butuh proses. Dibalik proses itu ada yang namanya usaha, seperti halnya kita melakukan troubleshooting pada error yang bermunculan karena di balik setiap kesulitan, pasti ada kemudahan yang menunggu dengan senyum manis. 
 
 
 
