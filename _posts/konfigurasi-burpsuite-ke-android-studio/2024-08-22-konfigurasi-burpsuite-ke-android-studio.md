@@ -59,7 +59,7 @@ Setelah Burp Suite dikonfigurasi sebagai proxy, langkah selanjutnya adalah setti
 
 Saat mengkonfigurasi Burp Suite dengan Android Studio, saya menemui beberapa masalah/error yang mungkin sangat umum, terutama terkait dengan pengaturan proxy, versi emulator, kompatibilitas API level pada emulator. Berikut adalah solusi untuk beberapa masalah yang sering ditemui:
 
-**1. Masalah "Proxy is uncreachble"**
+**1. Masalah "Proxy is unreachble"**
 
 Masalah ini sering muncul ketika kita mencoba mengarahkan network traffic aplikasi Android melalui Burp Suite, tetapi tidak ada koneksi yang berhasil.
 
