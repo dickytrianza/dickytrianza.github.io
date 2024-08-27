@@ -71,7 +71,7 @@ adb install aligned_pinned.apk
 
 # Bypass SSL Pinning dengan Frida
 
-Ketika kita mencoba login di aplikasi Pinned, muncul output "Logged in". Berdasarkan deskripsi challenge, langkah selanjutnya adalah mengintersept request login untuk mengetahui apa isi dari password yang kemungkinan merupakan flag dari challenge ini. Untuk mengintersept request tersebut, kita dapat menggunakan Burp Suite. Panduan konfigurasi Burp Suite ke Android dapat dibaca di [sini](_posts\konfigurasi-burpsuite-ke-android-studio\2024-08-22-konfigurasi-burpsuite-ke-android-studio.md). Kembali ke login intercept, kita menemukan bahwa request login pada aplikasi Pinned tidak bisa diintersept karena adanya SSL pinning yang melindungi aplikasi. Di sinilah Frida berperan penting untuk melewati mekanisme pinning tersebut.
+Ketika kita mencoba login di aplikasi Pinned, muncul output "Logged in". Berdasarkan deskripsi challenge, langkah selanjutnya adalah mengintercept request login untuk mengetahui apa isi dari password yang kemungkinan merupakan flag dari challenge ini. Untuk mengintercept request tersebut, kita dapat menggunakan Burp Suite. Panduan konfigurasi Burp Suite ke Android dapat dibaca di [sini](_posts\konfigurasi-burpsuite-ke-android-studio\2024-08-22-konfigurasi-burpsuite-ke-android-studio.md). Kembali ke login intercept, kita menemukan bahwa request login pada aplikasi Pinned tidak bisa diintercept karena adanya SSL pinning yang melindungi aplikasi. Di sinilah Frida berperan penting untuk melewati mekanisme pinning tersebut.
 
 Untuk melakukan bypass SSL pinning, kita akan menggunakan script dari Frida codeshare yang telah dikenal bisa untuk melewati mekanisme ini. Script nya bisa di copy di [Frida Codeshare](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)
 
@@ -96,7 +96,7 @@ Dengan menjalankan command di atas, Frida akan menginjeksi code yang diperlukan 
 
 # Kesimpulan
 
-Dari Challenge 'Pinned' kita belajar memahami mekanisme keamanan seperti SSL pinning dalam pengujian aplikasi mobile. Meskipun aplikasi tampak sederhana dengan hanya menampilkan output "Logged in," di balik layar terdapat lapisan perlindungan yang mencegah kita mengintersept data sensitif. Dengan menggunakan Frida, kita berhasil mem-bypass SSL pinning dan mendapatkan akses ke network traffic yang diperlukan untuk menyelesaikan challenge ini. Proses ini tidak hanya memperkuat skill teknis kita dalam menggunakan tool seperti Frida dan Burp Suite, tetapi juga belajar akan pentingnya ketelitian dalam menganalisis setiap langkah dalam pengujian aplikasi. 
+Dari Challenge 'Pinned' kita belajar memahami mekanisme keamanan seperti SSL pinning dalam pengujian aplikasi mobile. Meskipun aplikasi tampak sederhana dengan hanya menampilkan output "Logged in," di balik layar terdapat lapisan perlindungan yang mencegah kita mengintercept data sensitif. Dengan menggunakan Frida, kita berhasil mem-bypass SSL pinning dan mendapatkan akses ke network traffic yang diperlukan untuk menyelesaikan challenge ini. Proses ini tidak hanya memperkuat skill teknis kita dalam menggunakan tool seperti Frida dan Burp Suite, tetapi juga belajar akan pentingnya ketelitian dalam menganalisis setiap langkah dalam pengujian aplikasi. 
 
 
 
