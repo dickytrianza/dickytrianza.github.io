@@ -59,7 +59,11 @@ chmod +x /data/local/tmp/frida-server
 ```
 zipalign -p 4 pinned.apk aligned_pinned.apk
 ```
-2. Membuat Keystore untuk signing APK. Agar APK dapat diinstal pada perangkat Android, kita perlu melakukan signing keystore pada APK menggunakan `apksigner`. Fungsi signing ini untuk memastikan integritas dan otentikasi pada aplikasi tersebut. Untuk membuat keystore, jalankan command berikut:
+2. Membuat Keystore untuk signing APK. Agar APK dapat diinstal pada perangkat Android, kita perlu melakukan signing keystore pada APK menggunakan `apksigner`. Fungsi signing ini untuk memastikan integritas dan otentikasi pada aplikasi tersebut. Tapi sebelum melakukan signing kita perlu membuat keystorenya terlebih dahulu dengan `keytool`, jalankan command berikut:
+```
+keytool -genkey -keystore a.keystore -keyalg RSA -keysize 2048 -validity 10000
+```
+Lalu apply keystore ke `aligned_pinned.apk` dengan menggunakan `apksigner`.
 ```
 apksigner sign --ks a.keystore aligned_pinned.apk
 ```
@@ -71,7 +75,7 @@ adb install aligned_pinned.apk
 
 # Bypass SSL Pinning dengan Frida
 
-Ketika kita mencoba login di aplikasi Pinned, muncul output "Logged in". Berdasarkan deskripsi challenge, langkah selanjutnya adalah mengintercept request login untuk mengetahui apa isi dari password yang kemungkinan merupakan flag dari challenge ini. Untuk mengintercept request tersebut, kita dapat menggunakan Burp Suite. Panduan konfigurasi Burp Suite ke Android dapat dibaca di [sini](_posts\konfigurasi-burpsuite-ke-android-studio\2024-08-22-konfigurasi-burpsuite-ke-android-studio.md). Kembali ke login intercept, kita menemukan bahwa request login pada aplikasi Pinned tidak bisa diintercept karena adanya SSL pinning yang melindungi aplikasi. Di sinilah Frida berperan penting untuk melewati mekanisme pinning tersebut.
+Ketika kita mencoba login di aplikasi Pinned, muncul output "Logged in". Berdasarkan deskripsi challenge, langkah selanjutnya adalah mengintercept request login untuk mengetahui apa isi dari password yang kemungkinan merupakan flag dari challenge ini. Untuk mengintercept request tersebut, kita dapat menggunakan Burp Suite. Panduan konfigurasi Burp Suite ke Android dapat dibaca [di sini](https://dickytrianza.my.id/konfigurasi-burpsuite-ke-android-studio/). Kembali ke login intercept, kita menemukan bahwa request login pada aplikasi Pinned tidak bisa diintercept karena adanya SSL pinning yang melindungi aplikasi. Di sinilah Frida berperan penting untuk melewati mekanisme pinning tersebut.
 
 Untuk melakukan bypass SSL pinning, kita akan menggunakan script dari Frida codeshare yang telah dikenal bisa untuk melewati mekanisme ini. Script nya bisa di copy di [Frida Codeshare](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)
 
